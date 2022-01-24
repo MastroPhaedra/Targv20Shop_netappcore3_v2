@@ -1,0 +1,11 @@
+﻿@model Targv20Shop.Models.Spaceship.ImagesViewModel
+
+
+@{ var photoPaths = "~/multipleFileUpload/" + (Model.Image ?? "noimage.jpg"); }
+
+
+<div class="form-group row col-sm-4 offset-2">
+    <div>@Model.ImageTitle</div>
+    <img class="card-img-top" src="@Model.Image" asp-append-version="true" />
+    <input asp-action="removeImage" asp-controller="spaceship" asp-route-imageId="@Model.Id" type="submit" class="btn btn-danger" value="Remove Image" />
+</div> 
